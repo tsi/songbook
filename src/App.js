@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { ReactTinyLink } from "react-tiny-link";
 
-import ContentEditable from './components/ContentEditable'
 import AppHeader from './components/AppHeader'
 import SettingsMenu from './components/SettingsMenu'
 import SettingsIcon from './components/SettingsIcon'
@@ -277,7 +276,6 @@ export default class App extends Component {
           </button>
         )
       }
-      const boxIcon = (data.completed) ? '#todo__box__done' : '#todo__box'
       return (
         <div key={i} className='todo-item'>
           <label className="todo">
