@@ -10,7 +10,7 @@
   cursor: pointer;
 }
 .todo-create-wrapper {
-  margin-bottom: 20px;
+  margin: 20px 0;
   display: flex;
   align-items: center;
 }
@@ -39,6 +39,14 @@
   align-items: center;
   justify-content: space-between;
   min-height: 43px;
+  position: relative;
+  width: 100%;
+}
+.delete {
+  position: absolute;
+  right: 16px;
+  bottom: 25px;
+  z-index: 9;
 }
 .todo-list-title {
   font-size: 17px;
@@ -47,8 +55,7 @@
   flex-grow: 1;
   position: relative;
   z-index: 2;
-  margin-left: 45px;
-  width: 470px;
+  width: 100%;
 }
 .todo-list-title:hover span[contenteditable="false"]:before {
   content: 'click to edit';
@@ -90,8 +97,6 @@
   .todo-list-title {
     /* Disable Auto Zoom in Input “Text” tag - Safari on iPhone */
     font-size: 16px;
-    max-width: 80%;
-    margin-left: 40px;
   }
   .todo-create-wrapper {
     flex-direction: column;
@@ -130,9 +135,8 @@
   }
 }
 
-/** todo css via https://codepen.io/shshaw/pen/WXMdwE 😻 */
 .todo {
-  display: inline-block;
+  display: block;
   position: relative;
   padding: 0;
   margin: 0;
@@ -140,6 +144,7 @@
   min-width: 40px;
   cursor: pointer;
   padding-right: 5px;
+  width: 100%;
 }
 .todo__state {
   position: absolute;

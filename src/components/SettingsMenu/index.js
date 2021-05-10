@@ -27,7 +27,7 @@ export default class Menu extends Component {
     const { showMenu } = this.props
     const showOrHide = (showMenu) ? 'flex' : 'none'
     return (
-      <div className='settings-wrapper' style={{display: showOrHide}}>
+      <div className='settings-wrapper' style={{ display: showOrHide }}>
         <div className='settings-content'>
           <span className='settings-close' onClick={this.props.handleModalClose} role="img" aria-label='close'>
             ❌
@@ -38,7 +38,14 @@ export default class Menu extends Component {
               Clear All Completed Todos
             </button>
           </div>
-          <div className='settings-section' style={{display: 'none'}}>
+          <div className='settings-section' onClick={this.handleDelete}>
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href="https://cors-anywhere.herokuapp.com/corsdemo"
+            >CORS Anywhere</a>
+          </div>
+          <div className='settings-section' style={{ display: 'none' }}>
             <div className='settings-header'>Sort Todos:</div>
             <div className='settings-options-wrapper' data-setting='sortOrder'>
               <div

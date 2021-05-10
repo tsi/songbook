@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { ReactTinyLink } from "react-tiny-link";
+
 import ContentEditable from './components/ContentEditable'
 import AppHeader from './components/AppHeader'
 import SettingsMenu from './components/SettingsMenu'
@@ -89,6 +91,9 @@ export default class App extends Component {
     })
   }
   deleteTodo = (e) => {
+
+    if (!window.confirm("Are you sure?")) return
+
     const { todos } = this.state
     const todoId = e.target.dataset.id
 
@@ -267,7 +272,7 @@ export default class App extends Component {
       let deleteButton
       if (ref) {
         deleteButton = (
-          <button data-id={id} onClick={this.deleteTodo}>
+          <button data-id={id} onClick={this.deleteTodo} className="delete">
             delete
           </button>
         )
@@ -276,24 +281,31 @@ export default class App extends Component {
       return (
         <div key={i} className='todo-item'>
           <label className="todo">
-            <input
+            {/* <input
               data-id={id}
               className="todo__state"
               type="checkbox"
               onChange={this.handleTodoCheckbox}
               checked={data.completed}
-            />
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 25" className="todo__icon">
+            /> */}
+            {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 25" className="todo__icon">
               <use xlinkHref={`${boxIcon}`} className="todo__box"></use>
               <use xlinkHref="#todo__check" className="todo__check"></use>
-            </svg>
+            </svg> */}
             <div className='todo-list-title'>
-              <ContentEditable
+              {/* <ContentEditable
                 tagName='span'
                 editKey={id}
                 onBlur={this.updateTodoTitle} // save on enter/blur
                 html={data.title}
                 // onChange={this.handleDataChange} // save on change
+              /> */}
+              <ReactTinyLink
+                cardSize="small"
+                showGraphic={false}
+                maxLine={2}
+                minLine={1}
+                url={data.title}
               />
             </div>
           </label>
@@ -309,14 +321,10 @@ export default class App extends Component {
         <AppHeader />
 
         <div className='todo-list'>
-          <h2>
-            Create todo
-            <SettingsIcon onClick={this.openModal} className='mobile-toggle' />
-          </h2>
           <form className='todo-create-wrapper' onSubmit={this.saveTodo}>
             <input
               className='todo-create-input'
-              placeholder='Add a todo item'
+              placeholder='Add song URL'
               name='name'
               ref={el => this.inputElement = el}
               autoComplete='off'
@@ -324,13 +332,14 @@ export default class App extends Component {
             />
             <div className='todo-actions'>
               <button className='todo-create-button'>
-                Create todo
+                ADD
               </button>
               <SettingsIcon onClick={this.openModal}  className='desktop-toggle' />
             </div>
           </form>
 
           {this.renderTodos()}
+
         </div>
         <SettingsMenu
           showMenu={this.state.showMenu}
