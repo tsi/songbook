@@ -273,7 +273,7 @@ export default class App extends Component {
       if (ref) {
         deleteButton = (
           <button data-id={id} onClick={this.deleteTodo} className="delete">
-            delete
+            ✕
           </button>
         )
       }

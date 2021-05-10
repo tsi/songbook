@@ -30,14 +30,14 @@ export default class Menu extends Component {
       <div className='settings-wrapper' style={{ display: showOrHide }}>
         <div className='settings-content'>
           <span className='settings-close' onClick={this.props.handleModalClose} role="img" aria-label='close'>
-            ❌
+            ✕
           </span>
           <h2>Settings</h2>
-          <div className='settings-section' onClick={this.handleDelete}>
+          {/* <div className='settings-section' onClick={this.handleDelete}>
             <button className='btn-danger'>
               Clear All Completed Todos
             </button>
-          </div>
+          </div> */}
           <div className='settings-section' onClick={this.handleDelete}>
             <a
               target='_blank'
