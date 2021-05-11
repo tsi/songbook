@@ -304,6 +304,7 @@ export default class App extends Component {
                 maxLine={2}
                 minLine={1}
                 url={data.title}
+                proxyUrl={'https://shiron.netlify.app/cors-proxy'}
               />
             </div>
           </label>

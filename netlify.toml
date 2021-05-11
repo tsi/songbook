@@ -8,3 +8,9 @@
 [dev]
   # Local dev command. A.k.a npm start
   command = "react-scripts start"
+
+[[redirects]]
+  from = "/cors-proxy/*"
+  to = ":splat"
+  status = 200
+  force = true
