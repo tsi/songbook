@@ -38,13 +38,11 @@ export default class Menu extends Component {
               Clear All Completed Todos
             </button>
           </div> */}
-          <div className='settings-section' onClick={this.handleDelete}>
-            <a
-              target='_blank'
-              rel='noopener noreferrer'
-              href="https://cors-anywhere.herokuapp.com/corsdemo"
-            >CORS Anywhere</a>
-          </div>
+          <a
+            target='_blank'
+            rel='noopener noreferrer'
+            href="https://cors-anywhere.herokuapp.com/corsdemo"
+          >CORS Anywhere</a>
           <div className='settings-section' style={{ display: 'none' }}>
             <div className='settings-header'>Sort Todos:</div>
             <div className='settings-options-wrapper' data-setting='sortOrder'>
