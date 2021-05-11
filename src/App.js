@@ -3,7 +3,7 @@ import { ReactTinyLink } from "react-tiny-link";
 
 import AppHeader from './components/AppHeader'
 import SettingsMenu from './components/SettingsMenu'
-import SettingsIcon from './components/SettingsIcon'
+// import SettingsIcon from './components/SettingsIcon'
 import analytics from './utils/analytics'
 import api from './utils/api'
 import sortByDate from './utils/sortByDate'
@@ -31,7 +31,6 @@ export default class App extends Component {
         return false
       }
 
-      console.log('all todos', todos)
       this.setState({
         todos: todos
       })
@@ -333,7 +332,7 @@ export default class App extends Component {
               <button className='todo-create-button'>
                 ADD
               </button>
-              <SettingsIcon onClick={this.openModal}  className='desktop-toggle' />
+              {/* <SettingsIcon onClick={this.openModal}  className='desktop-toggle' /> */}
             </div>
           </form>
 

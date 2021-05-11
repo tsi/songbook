@@ -1,6 +1,6 @@
 {
-  "short_name": "FaunaDB Example",
-  "name": "Fauna + Netlify Functions",
+  "short_name": "SongBook",
+  "name": "SongBook",
   "icons": [
     {
       "src": "favicon.ico",
