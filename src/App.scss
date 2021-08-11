@@ -67,11 +67,12 @@
 .delete {
   position: absolute;
   right: -29px;
-  top: 15px;
+  top: -1px;
   padding: 2px 8px;
   z-index: 9;
   box-shadow: none;
   border-radius: 0;
+  border-left: none;
 }
 .todo-list-title {
   font-size: 17px;
