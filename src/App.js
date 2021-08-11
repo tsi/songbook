@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { ReactTinyLink } from "react-tiny-link";
+// import { ReactTinyLink } from "react-tiny-link";
 
 import AppHeader from './components/AppHeader'
 import SettingsMenu from './components/SettingsMenu'
 import api from './utils/api'
 import sortByDate from './utils/sortByDate'
 import isLocalHost from './utils/isLocalHost'
-import './App.css'
+import './App.scss'
 
 export default class App extends Component {
   state = {
@@ -46,8 +46,7 @@ export default class App extends Component {
     this.inputElement.value = ''
 
     const todoInfo = {
-      title: todoValue,
-      completed: false,
+      url: todoValue
     }
     // Optimistically add todo to UI
     const newTodoArray = [{
@@ -246,19 +245,11 @@ export default class App extends Component {
         )
       }
       return (
-        <div key={i} className='todo-item'>
-          <label className="todo">
-            <div className='todo-list-title'>
-              <ReactTinyLink
-                cardSize="small"
-                showGraphic={false}
-                maxLine={2}
-                minLine={1}
-                url={data.title}
-                proxyUrl={'https://shiron.netlify.app/cors-proxy'}
-              />
-            </div>
-          </label>
+        <div key={i} className="todo-item">
+          <a href={data.url} target="_blank">
+            <h2>{(data?.meta?.title || data?.og?.title).toLowerCase()}</h2>
+            <small>{data.url}</small>
+          </a>
           {deleteButton}
         </div>
       )
@@ -278,7 +269,7 @@ export default class App extends Component {
               name='name'
               ref={el => this.inputElement = el}
               autoComplete='off'
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
             />
             <div className='todo-actions'>
               <button className='todo-create-button'>
