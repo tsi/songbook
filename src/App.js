@@ -246,7 +246,7 @@ export default class App extends Component {
       }
       return (
         <div key={i} className="todo-item">
-          <a href={data.url} target="_blank" rel="noopener">
+          <a href={data.url} target="_blank" rel="noopener noreferrer">
             <h2>{(data?.meta?.title || data?.og?.title).toLowerCase()}</h2>
             <small>{data.url}</small>
           </a>
